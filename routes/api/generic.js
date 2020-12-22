@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const genericController = require("../../controllers/genericController");
+const genericController = require("../../controller/genericController");
 
 // Matches with "/api/generic"
 router.route("/")
