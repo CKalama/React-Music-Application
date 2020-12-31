@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import MusicPlayer from './components/MusicPlayer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <button>
         <a href="https://www.youtube.com/" target="_blank">Click</a>
         </button>
+        <MusicPlayer />
       </div>
     </div>
   );
