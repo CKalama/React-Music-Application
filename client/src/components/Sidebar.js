@@ -1,11 +1,21 @@
 import React from 'react'
+import {css, jsx} from "@emotion/react"
 
-function Sidebar() {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+
+const Sidebar = ({children}) => (
+    <div
+        className="Sidebar"
+        css={css `
+            width:200px;
+            height:100%;
+            background: green;
+            padding: 20px;
+        `}
+    >
+        {children}
+
+    </div>
+
+)
 
 export default Sidebar
