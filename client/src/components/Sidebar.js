@@ -1,6 +1,6 @@
 import React from 'react'
 import {css, jsx} from "@emotion/react"
-
+import logo from "../assets/musicReactLogo.png"
 
 const Sidebar = ({children}) => (
     <div
@@ -12,6 +12,7 @@ const Sidebar = ({children}) => (
             padding: 20px;
         `}
     >
+        <img src={logo} height={150} />
         {children}
 
     </div>
