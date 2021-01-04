@@ -1,18 +1,19 @@
 import React from 'react'
-import {css, jsx} from "@emotion/react"
+import {css} from "@emotion/react"
+//import '../App.css'
 import logo from "../assets/musicReactLogo.png"
 
 const Sidebar = ({children}) => (
     <div
         className="Sidebar"
         css={css `
-            width:200px;
-            height:100%;
+            width: 200px;
+            height: 100%;
             background: green;
-            padding: 20px;
+            padding: 15px;
         `}
     >
-        <img src={logo} height={150} />
+        <img src={logo} height={100} />
         {children}
 
     </div>

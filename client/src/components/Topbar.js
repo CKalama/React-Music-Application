@@ -1,15 +1,16 @@
 import React from 'react';
 import {css, jsx} from "@emotion/react";
+//import "../App.css"
 
-const TopBar = ({children}) => (
+const Topbar = ({children}) => (
     <div
     className="TopBar"
     csx={css `
-    position:absolute;
-    top:0;
-    height:50px;
+    position: absolute;
+    top: 0;
+    height: 50px;
     background: #070707;
-    left:200px;
+    left: 200px;
     width: calc(100% - 200px);
     padding: 20px;
     `}
