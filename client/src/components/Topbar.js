@@ -6,7 +6,7 @@ import {css, jsx} from "@emotion/react";
 const Topbar = ({children}) => (
     <div
     className="Topbar"
-    csx={css `
+    css={css `
     position: absolute;
     top: 0;
     height: 50px;
@@ -16,6 +16,7 @@ const Topbar = ({children}) => (
     padding: 20px;
     `}
     >
+        <h1 css={css `text-align:center; color:red;`}>Play Music, Learn Music, Love Music!</h1>
         {children}
         
     </div>

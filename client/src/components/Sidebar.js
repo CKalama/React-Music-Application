@@ -13,8 +13,13 @@ const Sidebar = ({children}) => (
             background: green;
             padding: 15px;
         `}
+        
     >
+        
         <img src={logo} height={115} />
+        <button>
+        <a href="https://www.youtube.com/" target="_blank">Click</a>
+        </button>
         {children}
 
     </div>
