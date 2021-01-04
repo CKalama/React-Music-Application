@@ -1,16 +1,16 @@
-import logo from './logo.svg';
+/** @jsxImportSource @emotion/react */
+import {jsx, css } from "@emotion/react";
+
 import './App.css';
 import Test from "./components/Test"
 import MusicPlayer from './components/MusicPlayer';
-import Sidebar from "./components/Sidebar"
+
 
 
 function App() {
   return (
     <div className="App">
       <div>
-        <Sidebar />
-        <Test />
         <MusicPlayer />
       </div>
     </div>
