@@ -11,7 +11,7 @@ const Topbar = ({children}) => (
     top: 0;
     height: 50px;
     background: #070707;
-    left: 200px;
+    left: 197px;
     width: calc(100% - 200px);
     padding: 20px;
     `}
