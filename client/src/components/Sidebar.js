@@ -2,6 +2,7 @@
 import React from 'react'
 import {css, jsx} from "@emotion/react"
 //import '../App.css'
+//Because we are using Webpack, it does not matter what you name this logo. Could be anything. 
 import logo from "../assets/musicReactLogo.png"
 
 const Sidebar = ({children}) => (
