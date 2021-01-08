@@ -6,6 +6,7 @@ import {css, jsx} from "@emotion/react"
 const Playbar = ({children}) => (
     <div
     className= "Playbar"
+    //Second way of Writing CSS with Emotion/Core. This allows you to write CSS within the HTML tags <> 
     css= {css `
     position: absolute;
     bottom: 0;
