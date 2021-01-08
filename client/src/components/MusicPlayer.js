@@ -19,6 +19,7 @@ const MusicPlayer  = () => (
 )
 
 //First way of writing CSS with emotion/core. You can call it under a const variable and call it above in JSX. 
+//Display: flex; makes it so that any containers will sit side by side. 
 const CSS = css `
     height: 100%;
     width: 100%;
