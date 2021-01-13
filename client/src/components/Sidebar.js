@@ -1,6 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import React, {useState} from 'react'
 import {css, jsx} from "@emotion/react"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+
 //import '../App.css'
 //Because we are using Webpack, it does not matter what you name this logo. Could be anything. 
 import logo from "../assets/musicReactLogo.png"
@@ -22,12 +24,14 @@ const Sidebar = () => {
     return ( 
     <ul className="Sidebar" css={sidebarCSS}>   
     <img src={logo} />
-
+    <li className="library">Library</li>
 
         {/* .map will loop through all the playlists in the state. you can name the parameter anything once you call map. I will name it something dumb for learning purposes */}
         {playlist.map(listInState => (
-        <li key={listInState}
+        <li 
+            key={listInState}
                 // Ternary Operator, If currentPlaylist is the className, it will hit the css pseudoclass below.
+                //SO, you weren't supposed to use a pseudoclass active with this because it will change in the inspect but it wont last because it needs to stay clicked!! It is a CLASS named active, meaning in css it would be li.active 
             className={listInState === playlistState.currentPlaylist ? 'active' : ''}
             onClick={() => {
                 //...state is whatever state is in the component. 
@@ -39,6 +43,11 @@ const Sidebar = () => {
             {listInState}
             </li>
         ))}
+
+        <li className="new-playlist">
+        <FontAwesomeIcon icon={['fab', 'plus-circle']} />
+            <span>New Playlist</span>
+        </li>
 
 
     </ul>
@@ -62,23 +71,46 @@ const sidebarCSS = css `
         padding-bottom: 25px;
     }
 
+    li.library {
+        cursor:unset;
+        color:#999;
+        text-transform: uppercase;
+        font-weight:normal;
+    }
+
     li {
         font-family: 'Roboto Slab', serif;
-        padding:10px
-        margin-left:15px;
+        padding-left:20px;
         margin-bottom: 10px; 
         text-transform: capitalize;
         font-weight:bold;
-        cursor:pointer;   
+        cursor:crosshair;   
         list-style-type:none;     
     }
 
     li.active {
         border-left:2px solid white; 
         padding-left: 18px;
-        
+        color:blue; 
     }
 
+    li.new-playlist {
+        position:absolute;
+    }
+
+    i {
+        margin-right:5px;
+        transform:translateY(1px);
+
+        &before {
+            font-size:20px;
+        }
+    }
+
+    span {
+        color:#999;
+        font-weight:300;
+    }
 `
 
 

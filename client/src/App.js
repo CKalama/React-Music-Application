@@ -2,7 +2,7 @@
 import {jsx, css } from "@emotion/react";
 
 //import './App.css';
-import Test from "./components/Test"
+
 import MusicPlayer from './components/MusicPlayer';
 
 
