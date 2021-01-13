@@ -8,7 +8,7 @@ import logo from "../assets/musicReactLogo.png"
 const Sidebar = () => {
     //Setting up setState for   
     const [playlistState, setPlaylist] = useState({
-        currentPlaylist: 'home', 
+        currentPlaylist: "home", 
         playlists: {
             home: null,
             favorites: null, 
@@ -18,7 +18,6 @@ const Sidebar = () => {
     
     //keys -Will give us an array of just the keys in the hook above. 
     const playlist = Object.keys(playlistState.playlists) 
-
 
     return ( 
     <ul className="Sidebar" css={sidebarCSS}>   
@@ -32,9 +31,9 @@ const Sidebar = () => {
             className={listInState === playlistState.currentPlaylist ? 'active' : ''}
             onClick={() => {
                 //...state is whatever state is in the component. 
-                setPlaylist({ ...playlistState, currentPlaylist: listInState})
+                setPlaylist({ ...playlistState, currentPlaylist: listInState })
             }}
-                /// WEIRD. With or without className and onClick JSX, just having the li:active below. The playlist will still be hit. 
+               
             
             >
             {listInState}
@@ -65,17 +64,19 @@ const sidebarCSS = css `
 
     li {
         font-family: 'Roboto Slab', serif;
-        padding-left: 20px; 
+        padding:10px
+        margin-left:15px;
         margin-bottom: 10px; 
         text-transform: capitalize;
         font-weight:bold;
-        cursor:crosshair;
-        
+        cursor:pointer;   
+        list-style-type:none;     
     }
 
-    li:active {
+    li.active {
         border-left:2px solid white; 
         padding-left: 18px;
+        
     }
 
 `
