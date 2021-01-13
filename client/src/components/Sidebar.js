@@ -8,11 +8,11 @@ import logo from "../assets/musicReactLogo.png"
 const Sidebar = () => {
     //Setting up setState for   
     const [playlistState, setPlaylist] = useState({
-        currentPlaylist: '', 
+        currentPlaylist: 'home', 
         playlists: {
-            Home: null,
-            Favorites: null, 
-            EasyToLearn: null,
+            home: null,
+            favorites: null, 
+            easyToLearn: null,
         }
     })
     
@@ -25,8 +25,21 @@ const Sidebar = () => {
     <img src={logo} />
 
 
-        {/* .map will loop through all the playlists in the state. */}
-        {playlist.map(list => <li key={list}>{list}</li>)}
+        {/* .map will loop through all the playlists in the state. you can name the parameter anything once you call map. I will name it something dumb for learning purposes */}
+        {playlist.map(listInState => 
+        <li key={listInState}
+                // Ternary Operator, If currentPlaylist is the className, it will hit the css pseudoclass below.
+            className={listInState === playlistState.currentPlaylist ? 'active' : ''}
+            onClick={() => {
+                //...state is whatever state is in the component. 
+                setPlaylist({ ...playlistState, currentPlaylist: listInState})
+
+                /// WEIRD. With or without className and onClick JSX, just having the li:active below. The playlist will still be hit. 
+            }}
+            >
+            {listInState}
+            </li>
+        )}
 
 
         {/* <button>
@@ -35,28 +48,43 @@ const Sidebar = () => {
 
     </ul>
 
-    )}
+    )
+}
     
 
 
 
 
     //New Way of writng CSS with Emotion/core, Now I can even use classNames to invoke CSS below and just do all CSS styling below 
+    //list-style-type: square;
 const sidebarCSS = css `
+    margin-top:0;
     width: 170px;
     height: 850px;
-    background: green;
+    background: #000000;
     padding: 15px;
+     
+    
 
     img {
         height:100px;
-        margin-left:10px;
+        
+        padding-bottom: 25px;
     }
 
     li {
         font-family: 'Roboto Slab', serif;
-        margin-left: 25px; 
-        list-style-type: square;
+        padding-left: 25px; 
+        margin-bottom: 15px; 
+        text-transform: capitalize;
+        font-weight:bold;
+        cursor:crosshair;
+        list-style-type:none;
+    }
+
+    li:active {
+        border-left:2px solid white; 
+        padding-left: 18px;
     }
 
     button {

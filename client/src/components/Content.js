@@ -10,7 +10,7 @@ import {css ,jsx} from "@emotion/react"
 const Content = ({ children }) => (
     <div className="Content"
     css={css `
-        width:calc(100% - 200px);
+        width:100%;
         padding:20px;
         background:#121212;
         `}
