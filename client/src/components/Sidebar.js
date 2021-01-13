@@ -45,7 +45,7 @@ const Sidebar = () => {
         ))}
 
         <li className="new-playlist">
-        <FontAwesomeIcon icon={['fab', 'plus-circle']} />
+        <FontAwesomeIcon icon="plus-circle" />
             <span>New Playlist</span>
         </li>
 
