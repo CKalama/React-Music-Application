@@ -26,33 +26,26 @@ const Sidebar = () => {
 
 
         {/* .map will loop through all the playlists in the state. you can name the parameter anything once you call map. I will name it something dumb for learning purposes */}
-        {playlist.map(listInState => 
+        {playlist.map(listInState => (
         <li key={listInState}
                 // Ternary Operator, If currentPlaylist is the className, it will hit the css pseudoclass below.
             className={listInState === playlistState.currentPlaylist ? 'active' : ''}
             onClick={() => {
                 //...state is whatever state is in the component. 
                 setPlaylist({ ...playlistState, currentPlaylist: listInState})
-
-                /// WEIRD. With or without className and onClick JSX, just having the li:active below. The playlist will still be hit. 
             }}
+                /// WEIRD. With or without className and onClick JSX, just having the li:active below. The playlist will still be hit. 
+            
             >
             {listInState}
             </li>
-        )}
+        ))}
 
-
-        {/* <button>
-        <a href="https://www.youtube.com/" target="_blank">Click</a>
-        </button> */}
 
     </ul>
 
     )
 }
-    
-
-
 
 
     //New Way of writng CSS with Emotion/core, Now I can even use classNames to invoke CSS below and just do all CSS styling below 
@@ -63,9 +56,7 @@ const sidebarCSS = css `
     height: 850px;
     background: #000000;
     padding: 15px;
-     
     
-
     img {
         height:100px;
         
@@ -74,12 +65,12 @@ const sidebarCSS = css `
 
     li {
         font-family: 'Roboto Slab', serif;
-        padding-left: 25px; 
-        margin-bottom: 15px; 
+        padding-left: 20px; 
+        margin-bottom: 10px; 
         text-transform: capitalize;
         font-weight:bold;
         cursor:crosshair;
-        list-style-type:none;
+        
     }
 
     li:active {
@@ -87,14 +78,21 @@ const sidebarCSS = css `
         padding-left: 18px;
     }
 
-    button {
-    width:100px;
-    text-align:center;
-    margin-left:25px;
-    border-color:red;
-    font-family: 'Roboto Slab', serif; 
-    }
 `
 
 
 export default Sidebar
+
+
+
+{/* <button>
+        <a href="https://www.youtube.com/" target="_blank" css={css ` {
+    width:100px;
+    text-align:center;
+    margin-left:25px;
+    border-color:red;
+    font-family: 'Roboto Slab', serif;
+    ` 
+    }
+    >Click
+    </a> </button> */}
