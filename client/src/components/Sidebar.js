@@ -20,11 +20,13 @@ const Sidebar = ({children}) => (
         <img src={logo} 
         css={css `
             height:100px;
+            margin-left:10px;
+            
             `
             } 
         />
 
-        <button>
+        <button css={buttonCSS}>
         <a href="https://www.youtube.com/" target="_blank">Click</a>
         </button>
         {children}
@@ -32,5 +34,13 @@ const Sidebar = ({children}) => (
     </div>
 
 )
+
+const buttonCSS = css `
+width:100px;
+text-align:center;
+margin-left:25px;
+border-color:red;
+
+`
 
 export default Sidebar
