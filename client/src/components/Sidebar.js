@@ -58,6 +58,14 @@ const Sidebar = () => {
 
     //New Way of writng CSS with Emotion/core, Now I can even use classNames to invoke CSS below and just do all CSS styling below 
     //list-style-type: square;
+    // i {
+    //     margin-right:5px;
+    //     transform:translateY(1px);
+
+    //     &before {
+    //         font-size:20px;
+    //     }
+    // }
 const sidebarCSS = css `
     margin-top:0;
     width: 170px;
@@ -96,15 +104,7 @@ const sidebarCSS = css `
 
     li.new-playlist {
         position:absolute;
-    }
-
-    i {
-        margin-right:5px;
-        transform:translateY(1px);
-
-        &before {
-            font-size:20px;
-        }
+                
     }
 
     span {
