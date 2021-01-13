@@ -40,6 +40,7 @@ width:100px;
 text-align:center;
 margin-left:25px;
 border-color:red;
+font-family: 'Roboto Slab', serif;
 
 `
 
