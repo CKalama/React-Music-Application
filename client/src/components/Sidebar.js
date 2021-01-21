@@ -53,7 +53,9 @@ const Sidebar = () => {
 
 
  
-        <li className="new-playlist">
+        <li className="new-playlist" onClick={() => {
+            setPlaylist({...playlistState, modal:true })
+        }}>
         <FontAwesomeIcon icon="plus-circle" />
             <span>New Playlist</span>
         </li>
