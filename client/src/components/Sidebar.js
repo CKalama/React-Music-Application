@@ -15,6 +15,7 @@ const Sidebar = () => {
             home: null,
             favorites: null, 
             easyToLearn: null,
+            
         }
     })
     
@@ -105,7 +106,9 @@ const sidebarCSS = css `
     }
 
     li.new-playlist {
-        position:absolute;
+        position: absolute;
+        left:0
+        
                 
     }
 
