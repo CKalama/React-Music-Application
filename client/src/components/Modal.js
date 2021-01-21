@@ -2,16 +2,23 @@
 import React from "react"
 import { css, jsx } from "@emotion/react"
 
-const Modal = ({ children}) => {
+//children is when you want a component to display on the page before knowing what's in it! 
+const Modal = ({ children }) => {
 
 
 return (
-    <div> {children}</div>
+    <div className="Modal" css={CSS}>
+
+    {children}
+
+    </div>
 
 
-
-)
+)   
 }
+
+
+const CSS = css ` `
 
 
 export default Modal
