@@ -8,8 +8,11 @@ const Modal = ({ children }) => {
 
 return (
     <div className="Modal" css={CSS}>
+        <div className="modal-content">
 
     {children}
+
+        </div>
 
     </div>
 
@@ -18,7 +21,15 @@ return (
 }
 
 
-const CSS = css ` `
+const CSS = css `
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.75);
+    position:absolute;
+    top:0;
+    left:0;
+
+ `
 
 
 export default Modal
