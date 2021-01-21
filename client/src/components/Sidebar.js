@@ -50,12 +50,23 @@ const Sidebar = () => {
             </li>
         ))}
 
+
+
+ 
         <li className="new-playlist">
         <FontAwesomeIcon icon="plus-circle" />
             <span>New Playlist</span>
         </li>
 
-        <Modal>
+
+
+        <Modal 
+        show={playlistState.modal} 
+        close= {() => {
+            //passing props
+            setPlaylist({...playlistState, modal: false })
+        }}
+        >
             This is a Modal!!!!!!!
         </Modal>
 

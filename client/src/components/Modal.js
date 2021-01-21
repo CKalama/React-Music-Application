@@ -1,16 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import React from "react"
 import { css, jsx } from "@emotion/react"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+
 
 //children is when you want a component to display on the page before knowing what's in it! 
-const Modal = ({ children }) => {
-
+const Modal = ({ children, show, close }) => {
+    if(!show) return null
 
 return (
     //Since modal-content is a child of Modal div, it will receive all of the css edits in @emotion
     <div className="Modal" css={CSS}>
         <div className="modal-content">
-
+    <FontAwesomeIcon icon="check-square" className="modal-icon" onClick={close}/>
     {children}
 
         </div>
@@ -39,6 +41,13 @@ const CSS = css `
     background:#211f27;
     border-radius:50px;
     padding:55px;
+}
+
+.modal-icon {
+    cursor:crosshair;
+    position:absolute;
+    bottom:15px;
+    left:35px;
 }
  `
 
