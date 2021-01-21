@@ -34,7 +34,9 @@ const Sidebar = () => {
                 //SO, you weren't supposed to use a pseudoclass active with this because it will change in the inspect but it wont last because it needs to stay clicked!! It is a CLASS named active, meaning in css it would be li.active 
             className={listInState === playlistState.currentPlaylist ? 'active' : ''}
             onClick={() => {
-                //...state is whatever state is in the component. 
+                //...state is whatever state is in the component.
+                //Needed to write this in JSX. That's why you need ... 
+                //setPlaylist is the second part of the UseState hook. In this example it is being wrapped in jsx with the ... to grab the currentPlaylist inside the hook but also being called through the ClassName
                 setPlaylist({ ...playlistState, currentPlaylist: listInState })
             }}
                
