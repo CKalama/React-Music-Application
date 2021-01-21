@@ -1,7 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import React, {useState} from 'react'
 import {css, jsx} from "@emotion/react"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+
+import Modal from "./Modal"
 
 //import '../App.css'
 //Because we are using Webpack, it does not matter what you name this logo. Could be anything. 
@@ -51,6 +53,10 @@ const Sidebar = () => {
         <FontAwesomeIcon icon="plus-circle" />
             <span>New Playlist</span>
         </li>
+
+        <Modal>
+            This is a Modal!!!!!!!
+        </Modal>
 
 
     </ul>
