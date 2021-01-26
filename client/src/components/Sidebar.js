@@ -69,7 +69,20 @@ const Sidebar = () => {
             setPlaylist({...playlistState, modal: false })
         }}
         >
-            This is a Modal!!!!!!!
+            <form >
+            <div className="new-playlist-title">New Playlist</div>
+
+            <div className="new-playlist-content">
+            <input 
+                className="input-box"
+                type="text"
+                placeholder="Add New Playlist"
+                />
+                    {/* <br /> */}
+                <button type="submit" className="new-playlist-button">Create</button>
+                
+            </div>    
+            </form>
         </Modal>
 
 
@@ -135,6 +148,27 @@ const sidebarCSS = css `
     span {
         color:#999;
         font-weight:300;
+    }
+
+    .new-playlist-title {
+        font-family: 'Roboto Slab', serif;
+        font-size:25px;
+        padding:15px;
+        text-align:center;
+    }
+
+    .input-box {
+        text-align:center;
+        width:250px;
+        padding:10px;
+        border-bottom: 3px solid green;
+        font-family: 'Roboto Slab', serif;
+    }
+
+    .new-playlist-button {
+        padding:12px;
+        color: green;
+        font-family: 'Roboto Slab', serif;
     }
 `
 
