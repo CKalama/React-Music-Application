@@ -12,7 +12,7 @@ return (
     //Since modal-content is a child of Modal div, it will receive all of the css edits in @emotion
     <div className="Modal" css={CSS}>
         <div className="modal-content">
-    <FontAwesomeIcon icon="check-square" className="modal-icon" onClick={close}/>
+    <FontAwesomeIcon icon="backspace" className="modal-icon" onClick={close}/>
     {children}
 
         </div>
@@ -46,8 +46,8 @@ const CSS = css `
 .modal-icon {
     cursor:crosshair;
     position:absolute;
-    bottom:15px;
-    left:35px;
+    top:15px;
+    right:35px;
 }
  `
 
