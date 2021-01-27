@@ -20,7 +20,8 @@ const Sidebar = () => {
             favorites: new Set(), 
             easyToLearn: new Set(),
             
-        }
+        },
+        toast:""
     })
 
     //Calling useRef to be used for the current value inside of the submit box in the modal. For small forms its easier to grab small values. Usually, we would have to create another State (like in GoogleBooks Project) and make it a useState([]). So the array would grab the value. Now with the useRef Hook we can interface with the DOM directly. 
@@ -41,7 +42,9 @@ const Sidebar = () => {
             modal:false,
             //Need to change the playlists in the useState hook above. With new Set() (a Javascript function)we will be able to manipulate it above. However, we will need to change the original playlists from NULL to new Set()
             playlists: {...playlistState.playlists, [data]: new Set() }, 
+            toast: "Your Playlist Was Made Successfully!"
         })
+        console.log("this is a console logggggg", playlistState.toast)
     }
 
     return ( 
@@ -105,7 +108,12 @@ const Sidebar = () => {
             </form>
         </Modal>
 
-        {/* <Toast /> */}
+        <Toast 
+        toast={playlistState.toast} 
+        close={() => {
+            setPlaylist({...playlistState, toast:""})
+        }}
+        />
 
     </ul>
 
