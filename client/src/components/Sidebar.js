@@ -15,14 +15,14 @@ const Sidebar = () => {
         currentPlaylist: "home",
         modal: false, 
         playlists: {
-            home: null,
-            favorites: null, 
-            easyToLearn: null,
+            home: new Set(),
+            favorites: new Set(), 
+            easyToLearn: new Set(),
             
         }
     })
 
-    //Calling useRef to be used for the current value inside of the submit box in the modal. 
+    //Calling useRef to be used for the current value inside of the submit box in the modal. For small forms its easier to grab small values. Usually, we would have to create another State (like in GoogleBooks Project) and make it a useState([]). So the array would grab the value. Now with the useRef Hook we can interface with the DOM directly. 
     const playlistRef = useRef(null)
     
     //keys -Will give us an array of just the keys in the hook above. 
@@ -31,8 +31,16 @@ const Sidebar = () => {
     //writing function that will grab the current value in the submit box of the modal. Will need useRef Hook to interface with the DOM(https://flaviocopes.com/react-hook-useref/). 
     const addPlaylist = e => {
         e.preventDefault() 
-        const list = playlistRef.current.value
-        console.log(list)
+        const data = playlistRef.current.value
+        //checking for bugs ot see if current value shows up.
+        console.log(data)
+    
+        setPlaylist ({
+            ...playlistState,
+            modal:false,
+            //Need to change the playlists in the useState hook above. With new Set() (a Javascript function)we will be able to manipulate it above. However, we will need to change the original playlists from NULL to new Set()
+            playlists: {...playlistState.playlists, [data]: new Set() }, 
+        })
     }
 
     return ( 
