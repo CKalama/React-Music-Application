@@ -4,6 +4,7 @@ import {css, jsx} from "@emotion/react"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 import Modal from "./Modal"
+import Toast from "./Toast"
 
 //import '../App.css'
 //Because we are using Webpack, it does not matter what you name this logo. Could be anything. 
@@ -104,6 +105,7 @@ const Sidebar = () => {
             </form>
         </Modal>
 
+        {/* <Toast /> */}
 
     </ul>
 
