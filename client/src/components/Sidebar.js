@@ -130,8 +130,9 @@ const sidebarCSS = css `
     
     img {
         height:100px;
-        
-        padding-bottom: 25px;
+        margin-bottom: 15px;
+        border: 2px solid white;
+        border-radius: 75px;
     }
 
     li.library {
