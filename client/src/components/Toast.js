@@ -12,7 +12,7 @@ const Toast = () => {
 
     return (
         <div className="toast" css={CSS}>
-            This is a Toast! 
+            This is a Test!
         </div>
     )
 }
