@@ -74,7 +74,7 @@ const Sidebar = () => {
 
             <div className="new-playlist-content">
             <input 
-                className="input-box"
+                className="new-playlist-input-box"
                 type="text"
                 placeholder="Add New Playlist"
                 />
@@ -159,7 +159,7 @@ const sidebarCSS = css `
         
     }
 
-    .input-box {
+    .new-playlist-input-box {
         text-align:center;
         width:400px;
         padding:10px;
@@ -175,7 +175,8 @@ const sidebarCSS = css `
         border:none;
         border-radius: 15px;
         padding:12px;
-        color: green;
+        background-color:green;
+        color: white;
         font-family: 'Roboto Slab', serif;
         text-transform: uppercase;
         
