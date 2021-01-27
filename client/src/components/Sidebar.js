@@ -78,7 +78,7 @@ const Sidebar = () => {
                 type="text"
                 placeholder="Add New Playlist"
                 />
-                    {/* <br /> */}
+                    <br />
                 <button type="submit" className="new-playlist-button">Create</button>
                 
             </div>    
@@ -153,22 +153,32 @@ const sidebarCSS = css `
     .new-playlist-title {
         font-family: 'Roboto Slab', serif;
         font-size:25px;
-        padding:15px;
+        margin-bottom:15px;
+        margin-left: 25px;
         text-align:center;
+        
     }
 
     .input-box {
         text-align:center;
-        width:250px;
+        width:400px;
         padding:10px;
         border-bottom: 3px solid green;
+        border-radius:25px;
         font-family: 'Roboto Slab', serif;
     }
 
     .new-playlist-button {
+        position:relative;
+        margin-left:175px;
+        margin-top:10px;
+        border:none;
+        border-radius: 15px;
         padding:12px;
         color: green;
         font-family: 'Roboto Slab', serif;
+        text-transform: uppercase;
+        
     }
 `
 
