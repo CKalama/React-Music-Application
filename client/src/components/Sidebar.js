@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import {css, jsx} from "@emotion/react"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
@@ -21,9 +21,19 @@ const Sidebar = () => {
             
         }
     })
+
+    //Calling useRef to be used for the current value inside of the submit box in the modal. 
+    const playlistRef = useRef(null)
     
     //keys -Will give us an array of just the keys in the hook above. 
     const playlist = Object.keys(playlistState.playlists) 
+
+    //writing function that will grab the current value in the submit box of the modal. Will need useRef Hook to interface with the DOM(https://flaviocopes.com/react-hook-useref/). 
+    const addPlaylist = e => {
+        e.preventDefault() 
+        const list = playlistRef.current.value
+        console.log(list)
+    }
 
     return ( 
     <ul className="Sidebar" css={sidebarCSS}>   
@@ -69,7 +79,7 @@ const Sidebar = () => {
             setPlaylist({...playlistState, modal: false })
         }}
         >
-            <form >
+            <form onSubmit={addPlaylist}>
             <div className="new-playlist-title">New Playlist</div>
 
             <div className="new-playlist-content">
@@ -77,6 +87,7 @@ const Sidebar = () => {
                 className="new-playlist-input-box"
                 type="text"
                 placeholder="Add New Playlist"
+                ref={playlistRef}
                 />
                     <br />
                 <button type="submit" className="new-playlist-button">Create</button>
