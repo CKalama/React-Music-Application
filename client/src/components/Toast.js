@@ -11,6 +11,8 @@ const Toast = ({toast, close}) => {
     if (!toast) return null
 
     //Writing a function that will run the callback passed as props (which is close prop). When the Toast unmounts we want to clear the timer. 
+
+    //Had to specificaaly create a variable to execute the callback function because React can get weird with mounting and unmounting components. 
     const closeToast = () => {
       setTimeout(() => {
         close()
