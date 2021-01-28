@@ -6,8 +6,25 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 //Going to pass props into Toast. 1st is toast, which is just a string value that can either be empty or a string that has some type of text content, it tells the user the playlist was made successfully. Also a close prop, this can be used where the Component is being called to alter the useState on the Sidebar.js
 const Toast = ({toast, close}) => {
-    if(!toast) return null
+    useEffect(() => {
+      //If not toast has no text content, then return null
+    if (!toast) return null
 
+    //Writing a function that will run the callback passed as props (which is close prop). When the Toast unmounts we want to clear the timer. 
+    const closeToast = () => {
+      setTimeout(() => {
+        close()
+      }, 2500)
+    }
+
+    closeToast()
+
+    return () => {
+      clearTimeout(closeToast)
+    }
+    }, [toast])
+
+    if (!toast) return null
 
 
     return (
