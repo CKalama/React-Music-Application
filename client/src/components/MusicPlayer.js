@@ -1,10 +1,21 @@
 /** @jsxImportSource @emotion/react */
-import React from 'react'
+import React, {Reducer, useContext} from 'react'
 import {css, jsx} from '@emotion/react'
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 import Playbar from "./Playbar";
+
+const DEFAULT_PLAYLIST = "home";
+
+export const initialState = {
+    currentPlaylist: DEFAULT_PLAYLIST,
+    playlists: {
+        home: new Set(),
+        favorites: new Set(),
+        easyToLearn: new Set(),
+    }
+};
 
 
 //At some point, you may need to throw all the components into a MusicPlayer folder. So Taking all the components and storing them within the MusicPlayer component folder.
