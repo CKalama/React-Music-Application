@@ -29,14 +29,16 @@ const reducer = (state, action) => {
 const MusicPlayer  = () => {
     //Using an array, it passes a value of whatever the state is. Which is an object. Dispatch allows us to update the state. useReducer can update and manipulate the state.
     const [state, dispatch] = useReducer()
+
     return (
+        <StoreContext.Provider>
     <div className="MusicPlayer" css={CSS}>
         <Topbar />
         <Sidebar />
         <Content />
-        <Playbar />
-        
+        <Playbar />    
     </div>
+        </StoreContext.Provider>
     )
 }
 
