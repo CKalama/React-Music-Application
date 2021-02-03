@@ -21,6 +21,17 @@ const initialState = {
 
 //Adding Reducer, with props state and action. 
 const reducer = (state, action) => {
+    //Need a switch statement to grab the objects.
+    switch(action.type) {
+        //This will see the ADD_PLAYLIST getting dispatched and provide the logic for us that we wrote on Sidebar. Ex.) {type: ADD_PLAYLIST, playlist: "Jazz"}
+        case 'ADD_PLAYLIST':
+            return {
+                ...state,
+                playlists: { ...state.playlists, [action.playlist]: new Set() } 
+            }
+        case 'SET_PLAYLIST':
+            return { ...state, currentPlaylist: action.playlist}
+    }
     return state;
 }
 
