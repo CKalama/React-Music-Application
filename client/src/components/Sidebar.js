@@ -15,7 +15,7 @@ import logo from "../assets/musicReactLogo.png"
 const Sidebar = () => {
     //Setting up setState for   
     const [playlistState, setPlaylist] = useState({
-        //currentPlaylist: "home",
+        // currentPlaylist: "home",
         modal: false, 
         // playlists: {
         //     home: new Set(),
