@@ -33,6 +33,7 @@ const Sidebar = () => {
     const playlistRef = useRef(null)
     
     //keys -Will give us an array of just the keys in the hook above. 
+    //Needed to change it from playlistState to state so that it would hook up to the store on the MusicPlayer.js
     const playlist = Object.keys(state.playlists) 
 
     //writing function that will grab the current value in the submit box of the modal. Will need useRef Hook to interface with the DOM(https://flaviocopes.com/react-hook-useref/). 
