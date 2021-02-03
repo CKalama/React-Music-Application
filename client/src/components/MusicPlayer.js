@@ -31,7 +31,7 @@ const MusicPlayer  = () => {
     const [state, dispatch] = useReducer()
 
     return (
-        <StoreContext.Provider>
+        <StoreContext.Provider value={{state, dispatch}}>
     <div className="MusicPlayer" css={CSS}>
         <Topbar />
         <Sidebar />

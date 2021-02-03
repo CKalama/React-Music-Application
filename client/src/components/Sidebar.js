@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useContext} from 'react'
 import {css, jsx} from "@emotion/react"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 import Modal from "./Modal"
 import Toast from "./Toast"
+//Importing StoreContext from MusicPlayer
+import {StoreContext} from "./MusicPlayer"
 
 //import '../App.css'
 //Because we are using Webpack, it does not matter what you name this logo. Could be anything. 
@@ -23,6 +25,9 @@ const Sidebar = () => {
         },
         toast:""
     })
+
+    //Destructuring the StoreContext. In video, he had to  change his hook from state because it was named the same const state. We avoided this by making the state hook unique name.
+    const {state , dispatch} = useContext(StoreContext)
 
     //Calling useRef to be used for the current value inside of the submit box in the modal. For small forms its easier to grab small values. Usually, we would have to create another State (like in GoogleBooks Project) and make it a useState([]). So the array would grab the value. Now with the useRef Hook we can interface with the DOM directly. 
     const playlistRef = useRef(null)
