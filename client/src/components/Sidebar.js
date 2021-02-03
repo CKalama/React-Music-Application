@@ -15,25 +15,25 @@ import logo from "../assets/musicReactLogo.png"
 const Sidebar = () => {
     //Setting up setState for   
     const [playlistState, setPlaylist] = useState({
-        currentPlaylist: "home",
+        //currentPlaylist: "home",
         modal: false, 
-        playlists: {
-            home: new Set(),
-            favorites: new Set(), 
-            easyToLearn: new Set(),
+        // playlists: {
+        //     home: new Set(),
+        //     favorites: new Set(), 
+        //     easyToLearn: new Set(),
             
-        },
+        // },
         toast:""
     })
 
     //Destructuring the StoreContext. In video, he had to  change his hook from state because it was named the same const state. We avoided this by making the state hook unique name.
-    const {state , dispatch} = useContext(StoreContext)
+    const { state, dispatch } = useContext(StoreContext)
 
     //Calling useRef to be used for the current value inside of the submit box in the modal. For small forms its easier to grab small values. Usually, we would have to create another State (like in GoogleBooks Project) and make it a useState([]). So the array would grab the value. Now with the useRef Hook we can interface with the DOM directly. 
     const playlistRef = useRef(null)
     
     //keys -Will give us an array of just the keys in the hook above. 
-    const playlist = Object.keys(playlistState.playlists) 
+    const playlist = Object.keys(state.playlists) 
 
     //writing function that will grab the current value in the submit box of the modal. Will need useRef Hook to interface with the DOM(https://flaviocopes.com/react-hook-useref/). 
     const addPlaylist = e => {
@@ -41,16 +41,21 @@ const Sidebar = () => {
         const data = playlistRef.current.value
         //checking for bugs ot see if current value shows up.
         console.log(data)
+
+        //Commented out playlists in SetPlaylist below because our dispatch will now take care of it.
+        dispatch({ type: 'ADD_PLAYLIST', playlist: data })
     
         setPlaylist ({
             ...playlistState,
             modal:false,
             //Need to change the playlists in the useState hook above. With new Set() (a Javascript function)we will be able to manipulate it above. However, we will need to change the original playlists from NULL to new Set()
-            playlists: {...playlistState.playlists, [data]: new Set() }, 
+            //playlists: {...playlistState.playlists, [data]: new Set() }, 
             toast: "Your Playlist Was Made Successfully!"
         })
         console.log("this is a console logggggg", playlistState.toast)
     }
+
+    const handleModal = () => setPlaylist({ ...playlistState, modal: !playlistState.modal })
 
     return ( 
     <ul className="Sidebar" css={sidebarCSS}>   
@@ -63,12 +68,13 @@ const Sidebar = () => {
             key={listInState}
                 // Ternary Operator, If currentPlaylist is the className, it will hit the css pseudoclass below.
                 //SO, you weren't supposed to use a pseudoclass active with this because it will change in the inspect but it wont last because it needs to stay clicked!! It is a CLASS named active, meaning in css it would be li.active 
-            className={listInState === playlistState.currentPlaylist ? 'active' : ''}
+            className={listInState === state.currentPlaylist ? 'active' : ''}
             onClick={() => {
                 //...state is whatever state is in the component.
                 //Needed to write this in JSX. That's why you need ... 
                 //setPlaylist is the second part of the UseState hook. In this example it is being wrapped in jsx with the ... to grab the currentPlaylist inside the hook but also being called through the ClassName
-                setPlaylist({ ...playlistState, currentPlaylist: listInState })
+                //setPlaylist({ ...playlistState, currentPlaylist: listInState })
+                dispatch({type: 'SET_PLAYLIST', playlist: listInState })
             }}
                
             

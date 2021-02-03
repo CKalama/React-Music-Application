@@ -32,6 +32,7 @@ const reducer = (state, action) => {
         case 'SET_PLAYLIST':
             return { ...state, currentPlaylist: action.playlist}
     }
+    //This is if an action comes through and it doesnt meet criteria it just returns the current state
     return state;
 }
 
@@ -39,7 +40,7 @@ const reducer = (state, action) => {
 //At some point, you may need to throw all the components into a MusicPlayer folder. So Taking all the components and storing them within the MusicPlayer component folder.
 const MusicPlayer  = () => {
     //Using an array, it passes a value of whatever the state is. Which is an object. Dispatch allows us to update the state. useReducer can update and manipulate the state.
-    const [state, dispatch] = useReducer()
+    const [state, dispatch] = useReducer(reducer, initialState)
 
     return (
         <StoreContext.Provider value={{state, dispatch}}>
