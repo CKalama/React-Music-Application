@@ -56,6 +56,7 @@ const Sidebar = () => {
         console.log("this is a console logggggg", playlistState.toast)
     }
 
+    //This is a function that we can replace all the logic in the close prop on some components and HTML tags
     const handleModal = () => setPlaylist({ ...playlistState, modal: !playlistState.modal })
 
     return ( 
