@@ -12,19 +12,19 @@ const Content = () => {
     const { state } = useContext(StoreContext)
 
     return (
-        <div className="Content"
-    css={css `
-        width:100%;
-        padding:20px;
-        background:#121212;
-        padding-top:150px;
-        text-transform: capitalize;
-        `}
-    >
-        {state.currentPlaylist}
+        <div className="Content" css={CSS}>
+        <div className="playlist-title">{state.currentPlaylist}</div>
         
     </div>
     )
 }
+
+const CSS  = css`
+width:100%;
+padding:20px;
+background:#121212;
+padding-top:150px;
+text-transform: capitalize;
+`
 
 export default Content 
