@@ -18,6 +18,7 @@ const Content = () => {
         padding:20px;
         background:#121212;
         padding-top:150px;
+        text-transform: capitalize;
         `}
     >
         {state.currentPlaylist}
