@@ -5,6 +5,7 @@ import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 import Content from "./Content";
 import Playbar from "./Playbar";
+import media from "../media.json";
 
 export const StoreContext = createContext(null)
 

@@ -10,10 +10,19 @@ import {css ,jsx} from "@emotion/react"
 const Content = () => {
 
     const { state } = useContext(StoreContext)
+    const currentPlaylist = state.currentPlaylist
 
     return (
         <div className="Content" css={CSS}>
-        <div className="playlist-title">{state.currentPlaylist}</div>
+        <div className="playlist-title">{currentPlaylist}</div>
+
+            <table>
+                <thead>
+                    <tr>Title</tr>
+                    <tr>Artist</tr>
+                    <tr>Length</tr>
+                </thead>
+            </table>
         
     </div>
     )
@@ -23,7 +32,7 @@ const CSS  = css`
 width:100%;
 padding:20px;
 background:#121212;
-padding-top:150px;
+padding-top:120px;
 text-transform: capitalize;
 `
 
