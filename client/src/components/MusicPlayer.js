@@ -13,8 +13,10 @@ const DEFAULT_PLAYLIST = "home";
 
 const initialState = {
     currentPlaylist: DEFAULT_PLAYLIST,
+    //Javascript shorthand, this way we can access the json file, if you highlight over the media below it will appear with the object and its key
+    media,
     playlists: {
-        home: new Set(),
+        home: new Set(media.ids),
         favorites: new Set(),
         easyToLearn: new Set(),
     }
