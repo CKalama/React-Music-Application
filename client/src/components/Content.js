@@ -54,7 +54,7 @@ padding:20px;
 background:#121212;
 padding-top:100px;
 text-transform: capitalize;
-
+overflow-y:scroll;
 
 .playlist-title {
     font-family: 'Roboto Slab', serif;
@@ -66,16 +66,13 @@ text-transform: capitalize;
 }
 
 table {
-    
+    margin-top: 5px;
     width: 100%;
     border-collapse: collapse:
     font-family: 'Roboto Slab', serif;
-    height: 50%;
-    overflow-y: scroll;
 };
 
 td {
-    
     border-bottom: 2px solid black;
     font-family: 'Roboto Slab', serif;
     font-size:12px;
