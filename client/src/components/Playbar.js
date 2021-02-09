@@ -14,7 +14,7 @@ const Playbar = ({children}) => (
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 75px;
+    height: 65px;
     background: #282828;
     z-index: 99;
     padding: 20px;

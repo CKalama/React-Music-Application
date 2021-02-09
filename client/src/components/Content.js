@@ -21,11 +21,11 @@ const Content = () => {
 
         <table>
                 <thead>
-                    <tr>
-                    <td>Title {sample}</td>
+                <tr>
+                    <td>Title</td>
                     <td>Artist</td>
                     <td>Length</td>
-                    </tr>
+                </tr>
                 </thead>
 
                 <tbody>
@@ -52,8 +52,34 @@ const CSS  = css`
 width:100%;
 padding:20px;
 background:#121212;
-padding-top:120px;
+padding-top:100px;
 text-transform: capitalize;
+
+
+.playlist-title {
+    font-family: 'Roboto Slab', serif;
+    font-size: 17px;
+}
+
+::-webkit-scrollbar {
+    width:15px;
+}
+
+table {
+    
+    width: 100%;
+    border-collapse: collapse:
+    font-family: 'Roboto Slab', serif;
+    height: 50%;
+    overflow-y: scroll;
+};
+
+td {
+    
+    border-bottom: 2px solid black;
+    font-family: 'Roboto Slab', serif;
+    font-size:12px;
+};
 `
 
 export default Content 
