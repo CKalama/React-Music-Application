@@ -11,6 +11,9 @@ const Content = () => {
 
     const { state } = useContext(StoreContext)
     const currentPlaylist = state.currentPlaylist
+    const sample = console.log(state.playlists[currentPlaylist])
+    //writing JS const to grab songs from playlist. When using Sets(), we need to convert to Array before displaying. 
+    const songIds = Array.from(state.playlists[currentPlaylist])
 
     return (
         <div className="Content" css={CSS}>
@@ -18,10 +21,27 @@ const Content = () => {
 
             <table>
                 <thead>
-                    <tr>Title</tr>
-                    <tr>Artist</tr>
-                    <tr>Length</tr>
+                    <tr>
+                    <td>Title {sample}</td>
+                    <td>Artist</td>
+                    <td>Length</td>
+                    </tr>
                 </thead>
+
+                <tbody>
+                    {songIds.map(songInfo => {
+                        const {title, artist, length} = state.media[songInfo]
+
+                        return (
+                            <tr key={songInfo}>
+                                <td>{title}</td>
+                                <td>{artist}</td>
+                                <td>{length}</td>
+                            </tr>
+                        )
+                    })}
+                </tbody>
+
             </table>
         
     </div>
