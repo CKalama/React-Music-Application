@@ -19,7 +19,7 @@ const Content = () => {
         <div className="Content" css={CSS}>
         <div className="playlist-title">{currentPlaylist}</div>
 
-            <table>
+        <table>
                 <thead>
                     <tr>
                     <td>Title {sample}</td>
@@ -42,7 +42,7 @@ const Content = () => {
                     })}
                 </tbody>
 
-            </table>
+        </table>
         
     </div>
     )
