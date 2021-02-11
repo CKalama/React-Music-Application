@@ -34,7 +34,16 @@ const reducer = (state, action) => {
             }
         case 'SET_PLAYLIST':
             return { ...state, currentPlaylist: action.playlist}
-    }
+    
+        case 'ADD_FAVORITE':
+            state.playlists.favorites.add(action.songIds)
+            //Returned a new instance of a state here, this helped with memory issues that using Redux has. Also, refer to Content.js under the first <td> to understand dispatch better
+            return {...state}
+
+        case 'REMOVE_FAVORITE':
+            state.playlists.favorites.delete(action.songIds)
+            return { ...state }
+        }
     //This is if an action comes through and it doesnt meet criteria it just returns the current state
     return state;
 }

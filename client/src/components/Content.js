@@ -10,7 +10,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 //Keep in mind with width:calc -- This calc is a cool way to tell CSS how to measure width. We know the flexbox is 200px so we subtract what % by 200px. It didnt seem to work tho lol, may have to reconfigure with normal css. 
 const Content = () => {
 
-    const { state } = useContext(StoreContext)
+    const { state, dispatch } = useContext(StoreContext)
     const currentPlaylist = state.currentPlaylist
     //const sample = console.log(state.playlists[currentPlaylist])
     //writing JS const to grab songs from playlist. When using Sets(), we need to convert to Array before displaying. 
@@ -38,11 +38,26 @@ const Content = () => {
                 <tbody>
                     {songIds.map(songInfo => {
                         const {title, artist, length} = state.media[songInfo]
+                        //.has is used with the new Set() JS logic. 
+                        const isFavorite = state.playlists.favorites.has(songInfo)
 
                         return (
                         
                             <tr key={songInfo}>
-                                <td><FontAwesomeIcon icon="heart" id="heart-icon" />
+                                <td>
+                                {isFavorite ? (
+                                    <FontAwesomeIcon icon="check-circle"
+                                    onClick={() => {
+                                        dispatch({
+                                            type:"REMOVE_FAVORITE", songIds:songInfo
+                                        })
+                                    }} />
+                                ) : (
+                                    <FontAwesomeIcon icon="heart" id="heart-icon" 
+                                    onClick={() => {
+                                        dispatch({type: 'ADD_FAVORITE', songIds: songInfo })
+                                    }} />
+                                )}
                                 </td>
                                 <td>{title}</td>
                                 <td>{artist}</td>
@@ -89,7 +104,7 @@ td {
 };
 
 #heart-icon {
-    color:gray;
+    color:red;
 }
 `
 
