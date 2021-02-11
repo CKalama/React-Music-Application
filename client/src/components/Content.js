@@ -2,6 +2,7 @@
 import React, {useContext} from "react";
 import {StoreContext} from "./MusicPlayer"
 import {css ,jsx} from "@emotion/react"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 
 //This component has children, it is a Containment concept (https://reactjs.org/docs/composition-vs-inheritance.html) from React. It allows you to put children before and within the div tags when you are not sure what children you will need ahead of time. This is typically common in a Sidebar Component! 
@@ -27,6 +28,7 @@ const Content = () => {
         <table>
                 <thead>
                 <tr>
+                    <td />
                     <td>Title</td>
                     <td>Artist</td>
                     <td>Length</td>
@@ -40,6 +42,8 @@ const Content = () => {
                         return (
                         
                             <tr key={songInfo}>
+                                <td><FontAwesomeIcon icon="heart" id="heart-icon" />
+                                </td>
                                 <td>{title}</td>
                                 <td>{artist}</td>
                                 <td>{length}</td>
@@ -83,6 +87,10 @@ td {
     font-family: 'Roboto Slab', serif;
     font-size:12px;
 };
+
+#heart-icon {
+    color:gray;
+}
 `
 
 export default Content 
