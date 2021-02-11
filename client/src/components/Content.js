@@ -11,13 +11,18 @@ const Content = () => {
 
     const { state } = useContext(StoreContext)
     const currentPlaylist = state.currentPlaylist
-    const sample = console.log(state.playlists[currentPlaylist])
+    //const sample = console.log(state.playlists[currentPlaylist])
     //writing JS const to grab songs from playlist. When using Sets(), we need to convert to Array before displaying. 
     const songIds = Array.from(state.playlists[currentPlaylist])
 
     return (
         <div className="Content" css={CSS}>
         <div className="playlist-title">{currentPlaylist}</div>
+
+        {/* Ternary Operator to Show empty playlists! If songIds.length is less than or equal to 0, it will display that paragraph, using if else with ? and :*/}
+        {songIds.length <=0 ? (
+            <p>Your Playlist is Empty!</p>
+        ) : (
 
         <table>
                 <thead>
@@ -33,17 +38,18 @@ const Content = () => {
                         const {title, artist, length} = state.media[songInfo]
 
                         return (
+                        
                             <tr key={songInfo}>
                                 <td>{title}</td>
                                 <td>{artist}</td>
                                 <td>{length}</td>
                             </tr>
+                            
                         )
                     })}
                 </tbody>
-
         </table>
-        
+        )}
     </div>
     )
 }

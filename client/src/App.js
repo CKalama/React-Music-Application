@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import {jsx, css } from "@emotion/react";
+import {jsx, css, Global } from "@emotion/react";
 
 //Importing FontAwesome globally
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -16,10 +16,18 @@ function App() {
   return (
     <div className="App">
       <div>
+        <Global styles={GlobalCSS}/>
         <MusicPlayer />
       </div>
     </div>
   );
 }
+
+const GlobalCSS = css `
+    * {
+      box-sizing:border-box;
+    }
+
+`
 
 export default App;
