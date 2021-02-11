@@ -24,10 +24,6 @@ function App() {
 }
 
 const GlobalCSS = css `
-    * {
-      box-sizing:border-box;
-    }
-
 `
 
 export default App;
