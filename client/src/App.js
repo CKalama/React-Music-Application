@@ -4,11 +4,11 @@ import {jsx, css, Global } from "@emotion/react";
 //Importing FontAwesome globally
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab, faBackspace } from "@fortawesome/free-solid-svg-icons";
-import { faCheckSquare, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCheckSquare, faPlusCircle, faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons";
 
 import MusicPlayer from './components/MusicPlayer';
 
-library.add( faCheckSquare, faPlusCircle, faBackspace)
+library.add( faCheckSquare, faPlusCircle, faBackspace, faHeart, faHeartBroken)
 
 
 
