@@ -6,7 +6,7 @@ Deployed Heroku Link: https://morning-brushlands-68335.herokuapp.com/
 
 
 Programming Tools => 
-    This React Application was built STRICTLY with React Native. Using an npx-create-react command line. The entire font-end is built with React. Using React logic such as Hooks (useEffect, useState, useContext), Reducer, and Redux. Combining these with JSX properties within each component. It was a strong test to learn more about Javascript, React.js, JSX, and Reducers. 
+    This React Application was built STRICTLY with React Native. Using an npx-create-react command line. The entire front-end is built with React. Using React logic such as Hooks (useEffect, useState, useContext), Reducer, and Redux. Combining these with JSX properties within each component. It was a strong test to learn more about Javascript, React.js, JSX, and Reducers. 
     Due to this being a strictly FRONT-END React Application, there is no database. The back-end is comprised of a simple server.js with a controller folder to assist with deploying to Heroku and locally. 
 
 
